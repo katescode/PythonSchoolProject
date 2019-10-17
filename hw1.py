@@ -1,20 +1,24 @@
+from inBetwWrapper import *
 
-def Hw1(UseTD):
+def Hw1(UseTD,inBetwWarp):
     print("\nзадание 3\n")
-    global UseTestData
-    UseTestData = UseTD
-    #UseTestData = False
 
-    inBetwTodayYourNameIs()
-    inBetwLetterCounter()
-    inBetwRemainder()
-    inBetwGeoMean()
-    inBetwFuncWX()
-    inBetwBmi()
-    inBetwMultiple3()
-    inBetwRoot3OfGeoMean()
-    inBetwGeoMeanStrings()
-    inBetwStringLenPow()
+    """temp"""
+    global UseTestData
+    UseTestData = inBetwWarp.get_isItTest()
+    """temp"""
+
+
+    # inBetwTodayYourNameIs()
+    # inBetwLetterCounter()
+    # inBetwRemainder()
+    # inBetwGeoMean()
+    # inBetwFuncWX()
+    # inBetwBmi()
+    # inBetwMultiple3()
+    # inBetwRoot3OfGeoMean()
+    # inBetwGeoMeanStrings()
+    # inBetwStringLenPow()
 
 def inBetwTodayYourNameIs():
     if UseTestData:
@@ -23,6 +27,7 @@ def inBetwTodayYourNameIs():
         name = input('Введите ваше имя ')
     answ=TodayYourNameIs(name)
     print(answ)
+
 def inBetwLetterCounter():
     if UseTestData:
         word = 'Очаровательно'

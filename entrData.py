@@ -1,17 +1,16 @@
 
 #say is input message if void put "void"
 #type can be 'str' for string, 'int' - int, 'flt'-float
-#limit if void put 0 for string is len(srt) for int is arrey[min, max] can look like arrey[min, 'less'] or arrey['more', max]
+#limit if void put 0 for string is len(srt)
+    # for int is arrey[min, max] can look like arrey[min, 'less'] or arrey['more', max]
 
 
-def EntrSmthg(Say,type, limit):
+def EntrSmthg(type, message, limit):
     type = 'str'
-    Say="dia otra dia y otra"
+    Say="un dia otro dia y otro"
     global say
-    global Abort
-    Abort = False
     say = Say
-    Typer(type)
+    answ = Typer(type)
     print('answ end')
 
 

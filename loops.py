@@ -2,7 +2,7 @@ def Loops(UseTD):
     print('\n\nзадание "циклы"\n')
     global UseTestData
     UseTestData = UseTD
-    inBetwOddEncript()
+    #inBetwOddEncript()
     #inBetwLeapYear()
     #inBetwRuVowels()
     #inBetwLetterInName()
@@ -41,8 +41,7 @@ def inBetwLetterInName():
     printStr = ['Буква','в этом имени -','']
     answ = indexAndItem(name, printStr)
     print(answ)
-
-def inBetw():
+def inBetwOddDivBy35():
     if UseTestData:
         num_1 = 25
         num_2 = 45
@@ -133,3 +132,5 @@ def IsOddNumber(number):
     if number % 2 == 0:
         answ = True
     return answ
+def oddDivBy():
+    pass

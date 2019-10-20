@@ -48,7 +48,9 @@ def inBetwOddDivBy35():
     else:
         num_1 = int(input('введите первое число'))
         num_2 = int(input('введите второе'))
-    answ = ''
+
+    divBy=[3,5]
+    answ = oddDivBy(num_1,num_2, divBy)
     print(answ)
 def inBetw():
     if UseTestData:
@@ -132,5 +134,5 @@ def IsOddNumber(number):
     if number % 2 == 0:
         answ = True
     return answ
-def oddDivBy():
+def oddDivBy(num_1,num_2, divBy):
     pass

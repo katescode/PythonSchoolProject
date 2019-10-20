@@ -2,14 +2,30 @@ def Loops(UseTD):
     print('\n\nзадание "циклы"\n')
     global UseTestData
     UseTestData = UseTD
+
     #inBetwOddEncript()
     #inBetwLeapYear()
     #inBetwRuVowels()
     #inBetwLetterInName()
     #inBetwOddDivBy35()
+
     #inBetwSqr3For1to10()
     #inBetwThisNumberCanDivBy()
     #inBetwThisNumbersCanDivBy()  #----can do better-----
+    #inBetwCountLastFibonacci()
+    #inBetwMultiplyLine()
+
+    #inBetwMaxDivForNumbers()
+    #inBetwWichOutABC()
+    #doYouLikePython()
+    #inBetwIsSimpleNumber()
+    #inBetwNoRuVowelsOnEvenPosition()
+
+    #inBetwCountTimeForBankDeposit()
+    #inBetwLiftOverWeight()
+    #inBetwYouDieIn()
+    #inBetwSpendingMoney()
+    inBetwWaterBot()
 
 
 
@@ -82,45 +98,127 @@ def inBetwThisNumbersCanDivBy():
 
     if str(answ) !=str([1]) and answ!=None:
         print(answ)
-
-def inBetw():
+def inBetwCountLastFibonacci():
     if UseTestData:
         n=10
     else:
         n = int(input('введите число из ряда Фибоначчи'))
-    answ = ''
+    answ = countFibonacci(n)
+    print(answ[-1])
+def inBetwMultiplyLine():
+    if UseTestData:
+        number = 15
+    else:
+        number =int(input('введите число'))
+    answ = multiplyTable(number, ['',' X ',' = '],[1,10])
     print(answ)
 
-def inBetw():
+def inBetwMaxDivForNumbers():
     if UseTestData:
-        pass
+        num_1 = 1812
+        num_2 = 2500
     else:
-        pass
-def inBetw():
+        num_1 = int(input('введите первое число'))
+        num_2 = int(input('введите второе'))
+    answ = maxDivForNumbers(num_1, num_2)
+    if str(answ) != str([1]) and answ != None:
+        print(answ)
+    else:
+        print("Общих делителей не найдено")
+def inBetwWichOutABC():
     if UseTestData:
-        pass
+        string='абстракция'
     else:
-        pass
-def inBetw():
+        string = input('введитие строку')
+    outRange =['а','б','в']
+    answ = takeOutRange(string,outRange)
+    print(answ)
+def doYouLikePython():
+    for i in range(0,5):
+
+        if UseTestData:
+            userSaid = "Нет"
+        else:
+            userSaid = input('Любители вы питон')
+        if userSaid =="Да":
+            print("Это отлично")
+            break
+        elif userSaid =="Нет":
+            if i == 4:
+                print("Это безнадёжно")
+                break
+            print("Увы, это неправильный ответ")
+def inBetwIsSimpleNumber():
     if UseTestData:
-        pass
+        number=173
     else:
-        pass
-def inBetw():
+        number = int(input('введите число'))
+    if len(ThisNumberCanDivBy(number)) == 2:
+        print("Простое")
+    else:
+        print("Не является простым")
+def inBetwNoRuVowelsOnEvenPosition():
     if UseTestData:
-        pass
+        string = 'прелестная строка'
+        #string = "пока"
     else:
-        pass
-def inBetw():
+        string = input('введитие строку')
+    RuVowels = ['а','о','и','у','я','ю','ё','е']
+    answ = NoOneOnEvenPosition(string,RuVowels)
+    if answ:
+        print("Какая хорошая строка!")
+    else:
+        print("Строка мне не нравится!")
+
+def inBetwCountTimeForBankDeposit():
     if UseTestData:
-        pass
+        Y = 170000
+        Z = 1000000
     else:
-        pass
-def inBetw():
+        num_1 = int(input('введите размер вклада'))
+        num_2 = int(input('введите желаемая сумма '))
+    answ = countTimeForBankDeposit(Y, Z, 10)
+    print(str(answ))
+def inBetwLiftOverWeight():
     if UseTestData:
-        pass
+        weight = 77
     else:
-        pass
+        weight =input('вес входящих')
+    nomore = 400
+    answ = MoreThanFor(nomore, weight)
+    print('Перевес',str(answ),'кг')
+def inBetwYouDieIn():
+    if UseTestData:
+        current_health=500
+        attack=80
+    else:
+        current_health=input('введите здоровье')
+        attack=input('введите силу атаки')
+    answ = LessThanFor(current_health,attack)
+    print(str(answ))
+def inBetwSpendingMoney():
+    if UseTestData:
+        balance = 10000
+        spent = 2800
+    else:
+        balance = input('введите баланс')
+        spent = input('введите расходы за раз')
+    answ = arrLessThan(balance,spent)
+    for stillHave in answ:
+        if stillHave>0:
+            print(str(stillHave))
+        else:
+            print("Слишком большие расходы")
+def inBetwWaterBot():
+    if UseTestData:
+        value = 1000
+        firstTime = 5
+    else:
+        value = input('введите объем')
+        firstTime = input('введите количество литров при первом заходе')
+    answ = MoreThanMultyplyFor(value,firstTime)
+    print(str(answ))
+
 
 def oddEncript(word):
     answ =''
@@ -185,26 +283,89 @@ def ThisNumbersCanDivBy(*numbers):#can do better
     forEachDivs=divs[0]
     answ = []
     notAllowd = []
-    print(divs)
     for div in divs:
         for index,fED in enumerate(forEachDivs):
             have = False
             for thediv in div:
                 if fED == thediv:
                     have = True
-                    print(str(fED)+" "+str(thediv))
             if not have:
                 forEachDivs[index]==0
                 answ.remove(fED)
                 notAllowd.append(fED)
-                print(forEachDivs[index],'hi')
             else:
                 if (fED not in answ) and (fED not in notAllowd):
                     answ.append(fED)
     return answ
 def countFibonacci(numero):
+    fib = []
+    for index, num in enumerate(range(1,int(numero)+1)):
+        if index>1:
+            fib.append(fib[index-2]+fib[index-1])
+        else:
+            fib.append(1)
+    return fib
+def multiplyTable(number, printStr,rng):
+    rang=range(rng[0],rng[1]+1)
+    answ = ''
+    for r in rang:
+        answ+=printStr[0]+str(number)+printStr[1]+str(r)+printStr[2]+str(number*r)+"\n"
 
-    pass
+    return answ
+def maxDivForNumbers(*nums):
+    answ = None
+    allDiv = ThisNumbersCanDivBy(*nums)
+    if len(allDiv)>1:
+        answ=max(allDiv)
+    return answ
+def takeOutRange(word, range):
+    answ = ''
+    for char in word:
+        if char not in range:
+            answ+=char
+    return answ
+def NoOneOnEvenPosition(word, range):
+    answ = True
+    for index,char in enumerate(word):
+        if  IsNumberDivBy(index,2):
+            if char in range:
+                answ = False
+                break
+    return answ
+def countTimeForBankDeposit(depositSum, richSum, percent):
+    answ = 0
+    while(depositSum<richSum):
+        depositSum+=depositSum*percent/100
+        answ+=1
+    return answ
+def MoreThanFor(maxpoint, add):
+    still = 0
+    while(still<maxpoint):
+        still+=add
+    answ = still-maxpoint
+    return answ
+def LessThanFor(haveNow,loose):
+    answ = 0
+    while(0<haveNow):
+        haveNow-=loose
+        if 0<haveNow:
+            answ += 1
+    return answ
+def arrLessThan(haveNow,loose):
+    answ = []
+    while(0<haveNow):
+        haveNow-=loose
+        answ.append(haveNow)
+    return answ
+def MoreThanMultyplyFor(maxpoint, add):
+    still = 0
+    addnow=add
+    answ = 0
+    while(still<maxpoint):
+        still+=addnow
+        addnow+=add
+        answ+=1
+    return answ
 
 # def inBetwcheckTeory():
 #     ThisNumbersCanDivBy(10,5,70,30,60,40)

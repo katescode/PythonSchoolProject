@@ -11,9 +11,9 @@ def main():
 
     # answ = entrData.EntrSmthg('say','str',0)
     # print(answ)
-    #hw1.Hw1(UseTestData)            # задание 3
-    #hwLists.HwLists()               # задание "список"
-    #ifYelse.IfYelse(UseTestData)    # задание "if-else"
+    # hw1.Hw1(UseTestData)            # задание 3
+    # hwLists.HwLists()               # задание "список"
+    # ifYelse.IfYelse(UseTestData)    # задание "if-else"
     loops.Loops(UseTestData) # задание "циклы"
 
 

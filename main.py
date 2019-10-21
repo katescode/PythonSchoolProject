@@ -13,6 +13,5 @@ def main():
     ifYelse.IfYelse(UseTestData)    # задание "if-else"
     loops.Loops(UseTestData) # задание "циклы"
 
-
 if __name__ == '__main__':
     main()

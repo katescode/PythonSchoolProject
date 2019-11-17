@@ -54,7 +54,9 @@ def inBtwGet_median():
 
 def inBtwAvg_order():
     user_db = [{'orders': 12}, {'orders': 30}, {'orders': 45}]
-    avg_order(user_db)
+    #answ = avg_order(user_db)
+    answ = elseavg_order(user_db)
+    print(str(answ))
 
 def inBtwRurEur():
     ticket_bd = [{'price': 400}, {'price': 200}, {'price': 150}]
@@ -120,15 +122,21 @@ def sort(numList):
     return answ
 
 def avg_order(user_db):
+    answ = []
     for i in user_db:
-        print(i)
         if len(i)>1:
-            order_sum = sum([user['orders'] for user in user_db])
-            orders_per_user = order_sum / len(user_db)
+            order_sum = sum([user['orders'] for user in i])
+            orders_per_user = order_sum / len(i)
         else:
-            orders_per_user = i
-        print(orders_per_user)
-
+            orders_per_user = i['orders']
+        print(i)
+        answ.append(orders_per_user)
+    return answ
+def elseavg_order(user_db):
+    order_sum = sum([user['orders'] for user in user_db])
+    orders_per_user = order_sum / len(user_db)
+    answ = orders_per_user
+    return answ
 def rewriteArrItem(strBefore,args):
     answ = []
     for i in args:

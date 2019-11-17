@@ -4,11 +4,11 @@ def Defs(UseTD):
     UseTestData = UseTD
     #UseTestData = False
 
-    inBtwSquare()
-    inBtwSum2()
-    inBtwPower()
-    inBtwGet_median()
-    inBtwAvg_order()  # ????????
+    #inBtwSquare()
+    #inBtwSum2()
+    #inBtwPower()
+    #inBtwGet_median()
+    #inBtwAvg_order()  # ????????
     inBtwRurEur()
 
 
@@ -62,9 +62,11 @@ def inBtwRurEur():
     snack_bd = [{'price': 100}, {'price': 95}, {'price': 150}]
     curency = 70
     answ = RurEur(ticket_bd, guide_bd, snack_bd, curency)
+    stingBefore= '€'
+    answ=  rewriteArrItem(stingBefore,answ)
     print(answ)
 
-
+any()
 
 
 def square(num):
@@ -95,10 +97,16 @@ def get_median(numList):
 def RurEur(*args):
     curency = args[-1]
     count = len(args) - 1
-    while count > 0:
-        count = count - 1
-        for price in args[count]:
-            answ = price['price'] * curency
+    items = 0
+    answ = []
+    while count > items:
+        Prices = []
+        for price in args[items]:
+            Price = price['price'] / curency
+            Prices.append(Price)
+        answ.append(Prices)
+        items = items + 1
+    return answ
 
 def sort(numList):
     count = len(numList)
@@ -116,4 +124,13 @@ def avg_order(user_db):
     orders_per_user = order_sum / len(user_db)
     print(orders_per_user)
 
-
+def rewriteArrItem(strBefore,args):
+    answ = []
+    for i in args:
+        items = []
+        for j in i:
+            j = float('{:.2f}'.format(j))
+            price = (strBefore+str(j))
+            items.append(price)
+        answ.append(items)
+    return answ

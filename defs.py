@@ -3,13 +3,13 @@ def Defs(UseTD):
     global UseTestData
     UseTestData = UseTD
     #UseTestData = False
-
     #inBtwSquare()
     #inBtwSum2()
     #inBtwPower()
     #inBtwGet_median()
-    inBtwAvg_order()  # ????????
+    #inBtwAvg_order()  # ????????
     #inBtwRurEur()
+    inBtwRandomRurEur()
 
 
 def inBtwSquare():
@@ -67,22 +67,26 @@ def inBtwRurEur():
     stingBefore= '€'
     answ=  rewriteArrItem(stingBefore,answ)
     print(answ)
-
-
+def inBtwRandomRurEur():
+    ticket_bd = [{'price': 400}, {'price': 200}, {'price': 150}]
+    guide_bd = [{'price': 50}, {'price': 40}]
+    snack_bd = [{'price': 100}, {'price': 95}, {'price': 150}]
+    curency = get_euro_rate()
+    answ = RurEur(ticket_bd, guide_bd, snack_bd, curency)
+    stingBefore= '€'
+    answ=  rewriteArrItem(stingBefore,answ)
+    print(answ)
 
 
 def square(num):
     answ = pow(num, 2)
     return answ
-
 def sum_2(num1, num2):
     answ = num1 + num2
     return answ
-
 def power(num, inPow):
     answ = pow(num, inPow)
     return answ
-
 def get_median(numList):
     sortedNumList = sort(numList)
     count = len(sortedNumList)
@@ -95,7 +99,6 @@ def get_median(numList):
         med = (count // 2) + 1
         mediana = sortedNumList[med]
     return mediana
-
 def RurEur(*args):
     curency = args[-1]
     count = len(args) - 1
@@ -109,7 +112,6 @@ def RurEur(*args):
         answ.append(Prices)
         items = items + 1
     return answ
-
 def sort(numList):
     count = len(numList)
     for i in range(count):
@@ -120,7 +122,6 @@ def sort(numList):
                 numList[j + 1] = temp
     answ = numList
     return answ
-
 def avg_order(user_db):
     answ = []
     for i in user_db:
@@ -147,3 +148,9 @@ def rewriteArrItem(strBefore,args):
             items.append(price)
         answ.append(items)
     return answ
+def get_euro_rate():
+    import random
+    euroRate = random.uniform(65, 85)
+    euroRate = float('{:.2f}'.format(euroRate))
+    print(euroRate)
+    return euroRate

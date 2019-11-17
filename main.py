@@ -3,6 +3,7 @@ import hwLists
 import ifYelse
 import loops
 import defs
+import pPandas
 
 def main():
     UseTestData = True
@@ -14,7 +15,7 @@ def main():
     #ifYelse.IfYelse(UseTestData)    # задание "if-else"
     #loops.Loops(UseTestData)        # задание "циклы"
     #defs.Defs(UseTestData)# задание "функции"
-     # задание "pandas"
+    pPandas.PPandas(UseTestData)  # задание "pandas"
 
 if __name__ == '__main__':
     main()

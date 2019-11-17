@@ -3,28 +3,28 @@ def Loops(UseTD):
     global UseTestData
     UseTestData = UseTD
 
-    #inBetwOddEncript()
-    #inBetwLeapYear()
-    #inBetwRuVowels()
-    #inBetwLetterInName()
-    #inBetwOddDivBy35()
+    inBetwOddEncript()
+    inBetwLeapYear()
+    inBetwRuVowels()
+    inBetwLetterInName()
+    inBetwOddDivBy35()
 
-    #inBetwSqr3For1to10()
-    #inBetwThisNumberCanDivBy()
-    #inBetwThisNumbersCanDivBy()  #----can do better-----
-    #inBetwCountLastFibonacci()
-    #inBetwMultiplyLine()
+    inBetwSqr3For1to10()
+    inBetwThisNumberCanDivBy()
+    inBetwThisNumbersCanDivBy()
+    inBetwCountLastFibonacci()
+    inBetwMultiplyLine()
 
-    #inBetwMaxDivForNumbers()
-    #inBetwWichOutABC()
-    #doYouLikePython()
-    #inBetwIsSimpleNumber()
-    #inBetwNoRuVowelsOnEvenPosition()
+    inBetwMaxDivForNumbers()
+    inBetwWichOutABC()
+    doYouLikePython()
+    inBetwIsSimpleNumber()
+    inBetwNoRuVowelsOnEvenPosition()
 
-    #inBetwCountTimeForBankDeposit()
-    #inBetwLiftOverWeight()
-    #inBetwYouDieIn()
-    #inBetwSpendingMoney()
+    inBetwCountTimeForBankDeposit()
+    inBetwLiftOverWeight()
+    inBetwYouDieIn()
+    inBetwSpendingMoney()
     inBetwWaterBot()
 
 

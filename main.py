@@ -13,8 +13,8 @@ def main():
     #hwLists.HwLists()               # задание "список"
     #ifYelse.IfYelse(UseTestData)    # задание "if-else"
     #loops.Loops(UseTestData)        # задание "циклы"
-    defs.Defs(UseTestData)# задание "функции"
-    # задание "pandas"
+    #defs.Defs(UseTestData)# задание "функции"
+     # задание "pandas"
 
 if __name__ == '__main__':
     main()

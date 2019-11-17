@@ -8,8 +8,8 @@ def Defs(UseTD):
     #inBtwSum2()
     #inBtwPower()
     #inBtwGet_median()
-    #inBtwAvg_order()  # ????????
-    inBtwRurEur()
+    inBtwAvg_order()  # ????????
+    #inBtwRurEur()
 
 
 def inBtwSquare():
@@ -66,7 +66,7 @@ def inBtwRurEur():
     answ=  rewriteArrItem(stingBefore,answ)
     print(answ)
 
-any()
+
 
 
 def square(num):
@@ -120,9 +120,14 @@ def sort(numList):
     return answ
 
 def avg_order(user_db):
-    order_sum = sum([user['orders'] for user in user_db])
-    orders_per_user = order_sum / len(user_db)
-    print(orders_per_user)
+    for i in user_db:
+        print(i)
+        if len(i)>1:
+            order_sum = sum([user['orders'] for user in user_db])
+            orders_per_user = order_sum / len(user_db)
+        else:
+            orders_per_user = i
+        print(orders_per_user)
 
 def rewriteArrItem(strBefore,args):
     answ = []

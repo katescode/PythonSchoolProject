@@ -9,7 +9,7 @@ def Defs(UseTD):
     #inBtwGet_median()
     #inBtwAvg_order()  # ????????
     #inBtwRurEur()
-    inBtwRandomRurEur()
+    #inBtwRandomRurEur()
 
 
 def inBtwSquare():
@@ -19,7 +19,6 @@ def inBtwSquare():
         num = int(input('введите число'))
     square_result = square(num)
     print(square_result)
-
 def inBtwSum2():
     if UseTestData:
         num1 = 42
@@ -29,7 +28,6 @@ def inBtwSum2():
         num = int(input('введите второе число'))
     answ = sum_2(num1, num2)
     print(answ)
-
 def inBtwPower():
     if UseTestData:
         num = 2
@@ -39,7 +37,6 @@ def inBtwPower():
         inPow = int(input('введите степень'))
     answ = power(num, inPow)
     print(answ)
-
 def inBtwGet_median():
     numList = []
     if UseTestData:
@@ -51,13 +48,11 @@ def inBtwGet_median():
             numList.append(int(input('введите число')))
     answ = get_median(numList)
     print(answ)
-
 def inBtwAvg_order():
     user_db = [{'orders': 12}, {'orders': 30}, {'orders': 45}]
     #answ = avg_order(user_db)
     answ = elseavg_order(user_db)
     print(str(answ))
-
 def inBtwRurEur():
     ticket_bd = [{'price': 400}, {'price': 200}, {'price': 150}]
     guide_bd = [{'price': 50}, {'price': 40}]
@@ -76,7 +71,6 @@ def inBtwRandomRurEur():
     stingBefore= '€'
     answ=  rewriteArrItem(stingBefore,answ)
     print(answ)
-
 
 def square(num):
     answ = pow(num, 2)

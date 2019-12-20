@@ -14,7 +14,9 @@ def PPandas(UseTD):
 
     #inBetwCreateDf()
     #inBetwDfColumnOneByOne()
-    inBewThroughPoint()#????????????????????????????
+    #inBewThroughPoint()
+    #inBetwMidDiffThroughtPoint()
+    inBetwAddDiffRow()
 
 def inBetwNewSeriesThree():
     ser = [5, 10, 11, 15, 17, 20]
@@ -57,8 +59,17 @@ def inBetwDfColumnOneByOne():
     print(answ[1])
 def inBewThroughPoint():
     answ= CreateDf()
-
-
+    a=answ.take([1],axis=1)
+    print(a)
+def inBetwMidDiffThroughtPoint():
+    answ= CreateDf()
+    a=answ[0]-answ[1]
+    print(a)
+def inBetwAddDiffRow():
+    answ = CreateDf()
+    #a = answ[0] - answ[1]
+    answ[2]=answ[0] - answ[1]
+    print(answ)
 
 def WethMoscow():
     indx = inBetwDateIndexDate()

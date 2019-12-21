@@ -46,8 +46,10 @@ def secondValueCount(traindata):
     print(traindata[traindata['Pclass']==1]['Survived'].value_counts())
     SexNClassValCOunt(traindata)
 def secondGroupby(traindata):
-    pass
-
+    print(traindata.groupby(by = 'Survived' )['Age'].mean())
+    print(traindata.groupby(by = ['Survived', 'Pclass'] )['Age'].mean())
+    print(traindata.groupby(by = ['Survived','Sex'] )['Pclass'].value_counts())
+    print(traindata[traindata.Fare!=0].groupby(by = ['Survived', 'Pclass'])[['Age','Fare']].aggregate(['min','max'])['Fare']['max'][0][3])
 
 
 def loadDataFromCSV():

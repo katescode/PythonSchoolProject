@@ -19,8 +19,9 @@ def inBetw():
     traindata['Fare']=round(traindata['Fare'],2)
     traindata['Embarked'].fillna('No data', inplace = True)
     #firstOutputs(traindata)
-    secondFiltrs(traindata)
-    
+    #secondFiltrs(traindata)
+    #secondValueCount(traindata)
+    secondGroupby(traindata)
 
 def firstOutputs(traindata):
     headFunc(traindata,0)
@@ -37,6 +38,16 @@ def secondFiltrs(traindata):
     print(traindata[traindata['Age']<18]['Fare'].min())
     print(traindata[traindata['Fare']>0]['Fare'].min())
     print(traindata[traindata['Pclass']==1]['Fare'].median())
+def secondValueCount(traindata):
+    print(traindata['Survived'].value_counts())
+    print(traindata[traindata['Sex']=='male']['Survived'].value_counts())
+    print(traindata[traindata['Sex']=='female']['Survived'].value_counts())
+    SexValCount(traindata)
+    print(traindata[traindata['Pclass']==1]['Survived'].value_counts())
+    SexNClassValCOunt(traindata)
+def secondGroupby(traindata):
+    pass
+
 
 
 def loadDataFromCSV():
@@ -53,3 +64,34 @@ def headFunc(df,num):
         print(df.head(num))
 def onlyOneRow(df, row):
     headFunc(df[df[row]==1],10)   
+
+def SexValCount(traindata):
+    for date in traindata['Sex'].unique():
+        if date == 'male':
+            print('Данные о мужчинах')
+        else:
+            print('Данные о женщинаж')
+        print(traindata[traindata['Sex']==date]['Survived'].value_counts())
+def SexNClassValCOunt(traindata):
+    for dClass in sorted(traindata['Pclass'].unique()):
+        if dClass ==1:
+            print('пассажиры первого класса')
+        if dClass ==2:
+            print('пассажиры второго класса')
+        if dClass ==3:
+            print('пассажиры третьего класса')
+        else:
+            pass
+        
+        for date in traindata['Sex'].unique():
+            if date == 'male':
+                print('Данные о мужчинах')
+            else:
+                print('Данные о женщинаж')
+            print(traindata[(traindata['Sex']==date)&(traindata['Pclass']==dClass)]['Survived'].value_counts())
+        
+
+
+
+
+

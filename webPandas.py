@@ -18,10 +18,12 @@ def inBetw():
     traindata = delRow(traindata,'PassengerId','Ticket','Cabin')
     traindata['Fare']=round(traindata['Fare'],2)
     traindata['Embarked'].fillna('No data', inplace = True)
-    #firstOutputs(traindata)
-    #secondFiltrs(traindata)
-    #secondValueCount(traindata)
+    firstOutputs(traindata)
+    secondFiltrs(traindata)
+    secondValueCount(traindata)
     secondGroupby(traindata)
+    secondPivotTable(traindata)
+    #secondMerge(traindata)
 
 def firstOutputs(traindata):
     headFunc(traindata,0)
@@ -50,6 +52,14 @@ def secondGroupby(traindata):
     print(traindata.groupby(by = ['Survived', 'Pclass'] )['Age'].mean())
     print(traindata.groupby(by = ['Survived','Sex'] )['Pclass'].value_counts())
     print(traindata[traindata.Fare!=0].groupby(by = ['Survived', 'Pclass'])[['Age','Fare']].aggregate(['min','max'])['Fare']['max'][0][3])
+def secondPivotTable(traindata):
+    print(traindata.pivot_table(values='Age', index = 'Pclass', columns = 'Survived', aggfunc = 'mean'))
+    test =traindata.pivot_table(values='Fare', index = 'Pclass', columns = 'Survived', aggfunc = ['min','mean','max'])
+    print(test['mean'][0][1])
+
+    print(traindata.pivot_table(values='SibSp', index = 'Pclass', columns = 'Survived', aggfunc = 'mean'))
+def secondMerge(traindata):
+    pass
 
 
 def loadDataFromCSV():
